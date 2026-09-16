@@ -1,0 +1,145 @@
+---
+name: wellPlate
+title: Well Plate Map
+menuGroup: Exploration
+menuSubgroup: Plots
+menuTitle: Well Plate Map
+version: '1.0.0'
+jas: '1.2'
+
+description:
+    main: >-
+        Draws a coloured plate map (6/12/24/96/384/1536 wells) from
+        plate-based experimental data.
+
+options:
+    - name: data
+      type: Data
+
+    - name: wellID
+      title: Well ID (e.g. A1, A01, or 1-96)
+      type: Variable
+      suggested:
+        - nominal
+        - id
+        - continuous
+      permitted:
+        - factor
+        - id
+        - numeric
+      description:
+          R: >-
+              a single variable holding well identifiers such as "A1" or
+              "A01", or a plain 1-based well number (e.g. 1-96 for a
+              96-well plate, numbered row-major starting at the
+              top-left well). Leave blank and use rowVar/colVar instead
+              if your data has separate row and column columns.
+
+    - name: rowVar
+      title: Row
+      type: Variable
+      suggested:
+        - nominal
+        - id
+      permitted:
+        - factor
+        - id
+      description:
+          R: a variable holding the row of each well (e.g. "A", "B", ...).
+
+    - name: colVar
+      title: Column
+      type: Variable
+      suggested:
+        - continuous
+        - nominal
+      permitted:
+        - factor
+        - id
+        - numeric 
+      description:
+          R: a variable holding the column number of each well (e.g. 1, 2, ...).
+
+    - name: value
+      title: Value
+      type: Variable
+      suggested:
+        - continuous
+        - nominal
+      permitted:
+        - factor
+        - numeric
+      description:
+          R: >-
+              the variable to display in each well. Numeric variables are
+              shown with a continuous colour scale + colourbar; nominal
+              (categorical) variables are shown with a discrete legend.
+
+    - name: plateSize
+      title: Plate size
+      type: List
+      options:
+        - '6'
+        - '12'
+        - '24'
+        - '96'
+        - '384'
+        - '1536'
+      default: '96'
+      description:
+          R: the number of wells on the plate.
+
+    - name: shape
+      title: Well shape
+      type: List
+      options:
+        - name: circle
+          title: Circle
+        - name: rect
+          title: Square
+      default: circle
+
+    - name: colourScheme
+      title: Colour scheme (numeric data)
+      type: List
+      options:
+        - name: viridis
+          title: Viridis
+        - name: magma
+          title: Magma
+        - name: plasma
+          title: Plasma
+        - name: cividis
+          title: Cividis
+        - name: reds
+          title: Reds
+        - name: blues
+          title: Blues
+      default: viridis
+      description:
+          R: colour scale used for numeric data. Ignored for categorical data.
+
+    - name: showLegend
+      title: Show colour bar / legend
+      type: Bool
+      default: true
+
+    - name: crossMissing
+      title: Cross out missing wells
+      type: Bool
+      default: false
+
+    - name: showBorder
+      title: Draw plate border
+      type: Bool
+      default: true
+
+    - name: wellSize
+      title: Well size
+      type: Number
+      min: 0.1
+      max: 1
+      default: 0.85
+      description:
+          R: size of each well relative to the grid spacing (0.1-1).
+...

@@ -1,0 +1,26 @@
+---
+name: wellPlate
+title: Well Plate Map
+jrs: '1.1'
+
+items:
+    - name: plot
+      title: Plate Map
+      type: Image
+      width: 750
+      height: 520
+      renderFun: .plot
+      requiresData: true
+      clearWith:
+        - wellID
+        - rowVar
+        - colVar
+        - value
+        - plateSize
+        - shape
+        - colourScheme
+        - showLegend
+        - crossMissing
+        - showBorder
+        - wellSize
+...

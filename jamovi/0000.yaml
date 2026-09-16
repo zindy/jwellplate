@@ -1,0 +1,31 @@
+---
+name: jwellplate
+title: Well Plate Maps
+version: 1.0.0
+jms: '1.0'
+authors:
+  - Egor Zindy
+maintainer: Egor Zindy <ezindy@gmail.com>
+date: '2026-09-15'
+type: R
+description: >-
+  Visualise plate-based experimental data (6, 12, 24, 96, 384 and 1536 well
+  plates) as coloured plate maps. Supports numeric (continuous) and categorical
+  (nominal) data, either via a single well-ID column (e.g. "A1", "A01") or
+  separate Row and Column variables.
+analyses:
+  - title: Well Plate Map
+    name: wellPlate
+    ns: jwellplate
+    menuGroup: Exploration
+    menuSubgroup: Plots
+    menuTitle: Well Plate Map
+    menuSubtitle: Plate maps for well-based data
+    category: analyses
+    description: >-
+      Draws a coloured plate map (6/12/24/96/384/1536 wells) from plate-based
+      experimental data.
+usesNative: true
+minApp: 1.0.8
+
+...

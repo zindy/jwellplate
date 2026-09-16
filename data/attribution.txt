@@ -1,0 +1,4 @@
+The data presented here was extracted from the image set BBBC014v1 provided by Ilya Ravkin,
+available from the Broad Bioimage Benchmark Collection [Ljosa et al., Nature Methods, 2012].
+
+https://bbbc.broadinstitute.org/BBBC014
