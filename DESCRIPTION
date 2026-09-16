@@ -1,0 +1,21 @@
+Package: jwellplate
+Type: Package
+Title: Well Plate Maps for jamovi
+Version: 1.0.0
+Author: Egor Zindy
+Maintainer: Egor zindy <ezindy@gmail.com>
+Description: Visualise plate-based experimental data (6, 12, 24, 96, 384
+    and 1536 well plates) as coloured plate maps, for numeric or
+    categorical data.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    jmvcore (>= 2.0.0),
+    R6,
+    ggplot2 (>= 3.4.0),
+    ggforce,
+    scales
+Depends:
+    R (>= 3.6)
+Config/roxygen2/version: 8.1.0
